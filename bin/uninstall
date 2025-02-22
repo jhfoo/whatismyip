@@ -1,0 +1,5 @@
+APP_ROOT=`dirname $0`
+cd $APP_ROOT/..
+
+PIP=pip
+$PIP uninstall -y package_name

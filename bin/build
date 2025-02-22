@@ -1,0 +1,24 @@
+#!/usr/local/bin/zsh
+
+APP_ROOT=`dirname $0`
+cd $APP_ROOT/..
+
+echo "- Bumping version"
+./venv/bin/python3 src/update-semver.py $@
+
+echo "- Building"
+rm -rf dist
+./venv/bin/python3 -m build 
+
+./venv/bin/python3 src/apply-scripts.py
+
+if [[ "$1" == "-y" ]]; then
+  REPLY="y"
+else
+  read -q "REPLY?Install to venv/? y/N"
+  echo ""
+fi
+
+if [[ "$REPLY" == "y" ]]; then
+  ./bin/install-venv
+fi

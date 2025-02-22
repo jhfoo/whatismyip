@@ -1,0 +1,13 @@
+PYTHON=python3.11
+
+rm -rf venv
+
+echo "- Installing venv/"
+$PYTHON -m venv venv
+
+echo "- Upgrading venv pip"
+./venv/bin/python3 -m pip install --upgrade pip
+
+echo "- Installing dependencies"
+./venv/bin/python3 -m pip install --upgrade build
+./venv/bin/pip install -r conf/requirements.txt

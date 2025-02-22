@@ -1,0 +1,4 @@
+APP_ROOT=`dirname $0`
+cd $APP_ROOT/..
+
+./venv/bin/python3 src/package_name/cli.py $@
