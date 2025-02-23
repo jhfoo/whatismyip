@@ -1,5 +1,7 @@
 PYTHON=python3.11
 
+sudo pkg install -y rust
+
 rm -rf venv
 
 echo "- Installing venv/"
