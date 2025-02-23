@@ -24,7 +24,7 @@ To see what the receiving host sees simply go a HTTP GET on port 8001
 ```sh
 curl <remote host>:8001
 # sample response
-3 {"RemoteIp":"192.168.130.8"}
+# {"RemoteIp":"192.168.130.8"}
 ```
 
 # Tested config
